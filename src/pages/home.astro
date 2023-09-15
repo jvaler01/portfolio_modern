@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ViewTransitions } from 'astro:transitions';
+---
+<ViewTransitions />
+<Layout title="Home Page" >
+	<main>
+        <section class="container">
+            <div class="sections about" transition:name="about_title">
+                <a href="/about">
+                    <span>
+                        About
+                    </span>
+                </a>
+            </div>
+            <div class="sections experience">
+                <a href="/about">
+                    <span transition:name="experience_title">
+                        Experience
+                    </span>
+                </a>
+            </div>
+            <div class="sections abilities">
+                <a href="/about">
+                    <span transition:name="abilities_title">
+                        Abilities
+                    </span>
+                </a>
+            </div>
+            <div class="sections projects">
+                <a href="/">
+                    <span transition:name="projects_title">
+                        About
+                    </span>
+                </a>
+            </div>
+            <div class="circle">
+                <div class="column">Column 1</div>
+                <div class="column">
+                    <div class="img">
+                        <img src="https://placehold.co/200" alt="" transition:name="profile_img">
+                    </div>
+                </div>
+                <div class="column">Column 3</div>
+            </div>
+        </section>
+    </main>
+    <div class="stars">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</Layout>
+<style>
+    .container {
+        color: var(--primary_text);
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 100vh;
+        margin: 0;
+        /* gap: 0px 400px; */
+    }
+	.img{
+		border-radius: 25%;
+	}
+	.img img{
+		border-radius: 50%;
+	}
+    .sections{
+        /* display: flex;
+        align-items: center;
+        justify-content: space-around; */
+    }
+    .sections:hover {
+        cursor: pointer;
+    }
+    .sections a{
+        text-decoration: none;
+        color: var(--primary_text);
+        display: grid;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .sections:hover a{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .about{
+        border-bottom: 2px solid var(--border);
+    }
+    .experience{
+        border-bottom: 2px solid var(--border);
+    }
+    .about:hover {
+        /* background: linear-gradient(to left top, #c7c7c7, #959597, #66676a, #3a3b40, #13151a); */
+        background: linear-gradient(to left top, rgba(199, 199, 199, 0.5), rgb(149, 149, 151, 0.5), rgb(102, 103, 106, 0.5), rgb(58, 59, 64, 0.5), rgb(19, 21, 26, 0.5));
+    }
+    .experience:hover {
+       /* background: linear-gradient(to right top, #c7c7c7, #959597, #66676a, #3a3b40, #13151a); */
+        background: linear-gradient(to right top, rgba(199, 199, 199, 0.5), rgb(149, 149, 151, 0.5), rgb(102, 103, 106, 0.5), rgb(58, 59, 64, 0.5), rgb(19, 21, 26, 0.5));
+    }
+    .abilities:hover {
+        /* background: linear-gradient(to left bottom, #c7c7c7, #959597, #66676a, #3a3b40, #13151a); */
+        background: linear-gradient(to left bottom, rgba(199, 199, 199, 0.5), rgb(149, 149, 151, 0.5), rgb(102, 103, 106, 0.5), rgb(58, 59, 64, 0.5), rgb(19, 21, 26, 0.5));
+    }
+    .projects:hover {
+        /* background: linear-gradient(to right bottom, #c7c7c7, #959597, #66676a, #3a3b40, #13151a); */
+        background: linear-gradient(to right bottom, rgba(199, 199, 199, 0.5), rgb(149, 149, 151, 0.5), rgb(102, 103, 106, 0.5), rgb(58, 59, 64, 0.5), rgb(19, 21, 26, 0.5));
+    }
+    .circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 800px;
+        border: 2px solid var(--border);
+        border-radius: 50%;
+        background-color: var(--background);
+        z-index: 1;
+        -webkit-box-shadow: inset 0px 0px 150px 50px var(--circle_shadow);
+        -moz-box-shadow: inset 0px 0px 150px 50px var(--circle_shadow);
+        box-shadow: inset 0px 0px 150px 50px var(--circle_shadow);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 5px;
+    }
+    .column {
+        background-color: rgba(0, 0, 0, 0.0);
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: space-around;
+    }
+    @media only screen and (max-width: 900px) {
+        .circle {
+            width: 300px;
+            height: 300px;
+        }
+        .container {
+            gap: 0px;
+        }
+    }
+    @media only screen and (min-width: 901px) and (max-width: 1400px) {
+        .circle {
+            width: 600px;
+            height: 600px;
+        }
+    }
+    .stars > * {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-size: 200px 200px;
+        background-image: radial-gradient(
+        3px 3px at 40px 60px,
+        #ccc,
+        rgba(0, 0, 0, 0)
+        ),
+        radial-gradient(2px 2px at 20px 50px, #ddd, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 30px 100px, #eee, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 40px 60px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 110px 90px, #ccc, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 190px 150px, #ddd, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 90px 123px, #ddd, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 25px 200px, #ddd, rgba(0, 0, 0, 0));
+        background-repeat: repeat;
+        transform-origin: 50% 50%;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: rotateAnimation;
+    }
+
+    .stars > *:nth-child(1) {
+        animation-duration: 30s;
+    }
+
+    .stars > *:nth-child(2) {
+        animation-duration: 32s;
+    }
+
+    .stars > *:nth-child(3) {
+        animation-duration: 35s;
+    }
+
+    .stars > *:nth-child(4) {
+        animation-duration: 41s;
+    }
+
+    .stars > *:nth-child(5) {
+        animation-duration: 44s;
+    }
+
+    .stars > *:nth-child(6) {
+        animation-duration: 49s;
+    }
+
+    .stars > *:nth-child(7) {
+        animation-duration: 52s;
+    }
+
+    .stars > *:nth-child(8) {
+        animation-duration: 56s;
+    }
+    @keyframes rotateAnimation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
