@@ -1,61 +1,50 @@
 ---
 interface Props {
-	title: string;
+	title?: string;
 	body: string;
-	href: string;
+	footer?: string;
+	full_height?: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { title, body, footer, full_height } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class={`card simple ${full_height ? 'full_height' : ''}`}>
+    <div class="content">
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </div>
+    <div class="footer">
+      <slot />
+    </div>
+  </div>
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
+	.card {
+		min-width: 150px;
 		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
+		min-height: 150px;
+		border: 2px solid var(--border);
+		padding: 2rem 1rem;
+		margin: 1rem;
+		color: var(--text);
+		background-color: var(--background);
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	.full_height{
+		height: 100%;
 	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+	.card h2 {
+		color: var(--title_text);
+		margin-bottom: 16px;
 	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
+	.simple {
+		display: flex;
+		flex-direction: column;
 	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
+	.simple .content {
+		flex: 1 1 auto;
+	}
+	.simple .footer {
+		margin-top: 16px;
+		flex: 0;
 	}
 </style>

@@ -33,13 +33,20 @@ const { title } = Astro.props;
 		--text: #6C6C6C;
 		--btn_text_size: 18px;
 	}
+	h1 {
+		font-size: 1.8rem;
+	}
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		background: var(--background);
+		height: 100%;
 	}
 	body {
-		margin: 0;
 		height: 100%;
 	}
 	code {

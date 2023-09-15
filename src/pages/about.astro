@@ -1,14 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
 import { ViewTransitions } from 'astro:transitions';
+import { aboutData } from '../utils/data/aboutData';
 ---
 <ViewTransitions />
 <Layout title="Home Page" >
-	<main>
-        <section class="about" transition:name="about_title">
-            <h1>About</h1>
-        </section>
-    </main>
+    <section class="about">
+        <h1>About</h1>
+        <div class="wrapper">
+            <div class="item about_content">
+                <div class="left_content">
+                    <Card full_height={false} body={aboutData.text} title={aboutData.title}>
+                        <div class="card_footer">
+                            <Button text='CV' href='/home'></Button>
+                        </div>
+                    </Card>
+                </div>
+            </div>
+            <div class="item">
+                <div class="right_content">
+                    <div class="img">
+                        <img src="https://placehold.co/200" alt="" transition:name="profile_img">
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <div class="back_button">
+                    <Button text='Back' href='/home'></Button>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="stars">
         <span></span>
         <span></span>
@@ -23,10 +50,64 @@ import { ViewTransitions } from 'astro:transitions';
 <style>
     .about {
         color: var(--primary_text);
+        padding: 100px;
+        height: 100%;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    .wrapper {
+        margin-top: 25px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 50px;
+    }
+    .item {
+        color: #fff;
+        display: grid;
+        place-items: center;
+    }
+    .last {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 4;
+    
+        /* Shorthand */
+        grid-column: 1 / 4;
+        grid-row: 4 / 4;
+    }
+    .left_content {
+        height: 100%;
         width: 100%;
         display: grid;
-        height: 100vh;
-        margin: 0;
+        align-items: center;
+    }
+    .right_content{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        align-items: center;
+    }
+	.img{
+        width: 100%;
+		border-radius: 25%;
+	}
+	.img img{
+        width: 100%;
+		border-radius: 50%;
+	}
+    .card_footer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    .back_button {
+        width: 100%;
+        display: grid;
+        justify-content: space-around;
     }
     .stars > * {
         position: fixed;

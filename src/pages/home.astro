@@ -6,42 +6,34 @@ import { ViewTransitions } from 'astro:transitions';
 <Layout title="Home Page" >
 	<main>
         <section class="container">
-            <div class="sections about" transition:name="about_title">
-                <a href="/about">
-                    <span>
-                        About
-                    </span>
+            <div class="sections about">
+                <a href="/about" transition:animate="fade">
+                    About
                 </a>
             </div>
             <div class="sections experience">
                 <a href="/about">
-                    <span transition:name="experience_title">
-                        Experience
-                    </span>
+                    Experience
                 </a>
             </div>
             <div class="sections abilities">
                 <a href="/about">
-                    <span transition:name="abilities_title">
-                        Abilities
-                    </span>
+                    Abilities
                 </a>
             </div>
             <div class="sections projects">
                 <a href="/">
-                    <span transition:name="projects_title">
-                        About
-                    </span>
+                    About
                 </a>
             </div>
             <div class="circle">
-                <div class="column">Column 1</div>
+                <div class="column">Jorge Valero Martín</div>
                 <div class="column">
                     <div class="img">
                         <img src="https://placehold.co/200" alt="" transition:name="profile_img">
                     </div>
                 </div>
-                <div class="column">Column 3</div>
+                <div class="column">Front-End Developer</div>
             </div>
         </section>
     </main>

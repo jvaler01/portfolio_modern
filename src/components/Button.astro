@@ -1,17 +1,23 @@
 ---
 export interface Props {
     text: string;
+    href?: string;
 }
-const { text } = Astro.props;
+const { text, href } = Astro.props;
 ---
 <div class="btn">
-    <p>{text}</p>
+    {
+        href !== undefined &&  <a class="btn_link" href={`${href}`}>{text}</a>
+    }
+    {
+        href === undefined &&  <p>{text}</p>
+    }
 </div>
 
 <style>
     .btn{
         background-color: var(--background);
-        border: 1px solid var(--border);
+        border: 2px solid var(--border);
         color: var(--text);
         min-width: 200px;
         height: 50px;
@@ -23,12 +29,25 @@ const { text } = Astro.props;
         border-color: var(--hover_btn);
         color: var(--background);
     }
-    p{
+    .btn p{
         margin: 0;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: var(--btn_text_size);
+    }
+    .btn_link{
+        text-decoration: none;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--btn_text_size);
+        color: var(--text);
+    }
+    .btn_link:hover{
+        color: var(--background);
     }
 </style>
