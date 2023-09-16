@@ -31,10 +31,44 @@ const { title } = Astro.props;
 		--primary_text: #F75049;
 		--title_text: #C7C7C7;
 		--text: #6C6C6C;
-		--btn_text_size: 18px;
+		--title_text_size: 36px;
+		--subtitle_text_size: 30px;
+		--subtitle_2_text_size: 22px;
+		--normal_text_size: 18px;
+		--title_text_size_mobile: 21px;
+		--subtitle_text_size_mobile: 18px;
+		--subtitle_2_text_size_mobile: 18px;
+		--normal_text_size_mobile: 16px;
+	}
+	@font-face {
+		font-family: 'Scada';
+		src: url(/fonts/Scada-Regular.ttf) format('truetype');
 	}
 	h1 {
-		font-size: 1.8rem;
+		font-size: var(--title_text_size);
+	}
+	h2 {
+		font-size: var(--subtitle_text_size);
+	}
+	h3 {
+		font-size: var(--subtitle_2_text_size);
+	}
+	p {
+		font-size: var(--normal_text_size);
+	}
+	@media only screen and (max-width: 900px) {
+		h1 {
+			font-size: var(--title_text_size_mobile);
+		}
+		h2 {
+			font-size: var(--subtitle_text_size_mobile);
+		}
+		h3 {
+			font-size: var(--subtitle_2_text_size_mobile);
+		}
+		p {
+			font-size: var(--normal_text_size_mobile);
+		}
 	}
 	*{
 		margin: 0;
@@ -42,7 +76,7 @@ const { title } = Astro.props;
 		box-sizing: border-box;
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: 'Scada', system-ui, sans-serif;
 		background: var(--background);
 		height: 100%;
 	}

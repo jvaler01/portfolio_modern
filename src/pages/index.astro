@@ -12,7 +12,8 @@ import { ViewTransitions } from 'astro:transitions';
 	<main>
 		<div class="container_home">
 			<div class="img">
-				<img src="https://placehold.co/200" alt="" transition:name="profile_img">
+				<!-- <img src="https://placehold.co/200" alt="" transition:name="profile_img"> -->
+				<img src="/images/profile/Pixel_Art_Perfil_no_frame.png" alt="" transition:name="profile_img">
 			</div>
 			<div class="button_home" id="home">
 				<Button text='Start'></Button>
@@ -36,9 +37,11 @@ import { ViewTransitions } from 'astro:transitions';
 	}
 	.img{
 		border-radius: 25%;
+		z-index: 2;
 	}
 	.img img{
 		border-radius: 50%;
+		max-width: 200px;
 	}
 	h1 {
 		font-size: 3rem;
@@ -148,9 +151,9 @@ import { ViewTransitions } from 'astro:transitions';
 			button!.style.display = "none";
 			document.getElementById('indexLoader')!.style.display = "block";
 			document.getElementById('containerLoader')!.classList.toggle('none');
-			setTimeout(() => {
+			/* setTimeout(() => {
     			document.getElementById('containerLoader')!.classList.toggle('hide');
-			}, 3000);
+			}, 3000); */
 			setTimeout(() => {
 				document.getElementById('test')?.click();
 			}, 4150);

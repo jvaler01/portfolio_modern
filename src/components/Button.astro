@@ -2,12 +2,16 @@
 export interface Props {
     text: string;
     href?: string;
+    download?: string;
 }
-const { text, href } = Astro.props;
+const { text, href, download } = Astro.props;
 ---
 <div class="btn">
     {
-        href !== undefined &&  <a class="btn_link" href={`${href}`}>{text}</a>
+        (href !== undefined && download === undefined) &&  <a class="btn_link" href={`${href}`}>{text}</a>
+    }
+    {
+        (href !== undefined && download !== undefined) &&  <a class="btn_link" href={`${href}`} download={`${download}`}>{text}</a>
     }
     {
         href === undefined &&  <p>{text}</p>
@@ -35,7 +39,7 @@ const { text, href } = Astro.props;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: var(--btn_text_size);
+        font-size: var(--normal_text_size);
     }
     .btn_link{
         text-decoration: none;
@@ -44,10 +48,18 @@ const { text, href } = Astro.props;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: var(--btn_text_size);
+        font-size: var(--normal_text_size);
         color: var(--text);
     }
     .btn_link:hover{
         color: var(--background);
     }
+	@media only screen and (max-width: 900px) {
+        .btn p{
+            font-size: var(--normal_text_size_mobile);
+        }
+        .btn_link{
+            font-size: var(--normal_text_size_mobile);
+        }
+	}
 </style>

@@ -14,22 +14,22 @@ import { aboutData } from '../utils/data/aboutData';
                 <div class="left_content">
                     <Card full_height={false} body={aboutData.text} title={aboutData.title}>
                         <div class="card_footer">
-                            <Button text='CV' href='/home'></Button>
+                            <Button text='CV' href='/documents/cv.pdf' download='JorgeValeroCV'></Button>
                         </div>
                     </Card>
                 </div>
             </div>
-            <div class="item">
+            <div class="item img_item">
                 <div class="right_content">
                     <div class="img">
-                        <img src="https://placehold.co/200" alt="" transition:name="profile_img">
+                        <img src="/images/profile/Pixel_Art_Perfil_no_frame.png" alt="" transition:name="profile_img">
                     </div>
                 </div>
             </div>
-            <div class="item">
+            <div class="item empty_item">
                 <p></p>
             </div>
-            <div class="item">
+            <div class="item back_item">
                 <div class="back_button">
                     <Button text='Back' href='/home'></Button>
                 </div>
@@ -68,6 +68,18 @@ import { aboutData } from '../utils/data/aboutData';
         display: grid;
         place-items: center;
     }
+    .about_conten {
+        order: 1;
+    }
+    .img_item {
+        order: 2;
+    }
+    .empty_item {
+        order: 3;
+    }
+    .back_item {
+        order: 4;
+    }
     .last {
         grid-column-start: 1;
         grid-column-end: 4;
@@ -97,6 +109,7 @@ import { aboutData } from '../utils/data/aboutData';
 	.img img{
         width: 100%;
 		border-radius: 50%;
+        border: 2px solid var(--border);
 	}
     .card_footer{
         display: flex;
@@ -109,6 +122,22 @@ import { aboutData } from '../utils/data/aboutData';
         display: grid;
         justify-content: space-around;
     }
+	@media only screen and (max-width: 900px) {
+        .wrapper {
+            grid-template-columns: 1fr;
+            gap: 0px;
+        }
+        .about_conten {
+            order: 2;
+        }
+        .img_item {
+            order: -1;
+            justify-content: space-around;
+        }
+        .img img{
+            max-width: 200px;
+        }
+	}
     .stars > * {
         position: fixed;
         top: 0;

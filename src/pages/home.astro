@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
 import { ViewTransitions } from 'astro:transitions';
 ---
 <ViewTransitions />
@@ -23,18 +24,23 @@ import { ViewTransitions } from 'astro:transitions';
             </div>
             <div class="sections projects">
                 <a href="/">
-                    About
+                    Projects
                 </a>
             </div>
             <div class="circle">
-                <div class="column"><h2>Jorge Valero Martín</h2></div>
+                <div class="column"><h2 class="">Jorge Valero Martín</h2></div>
                 <div class="column col_img">
                     <div class="img">
-                        <img src="https://placehold.co/200" alt="" transition:name="profile_img">
+                        <a href="/about"><img src="/images/profile/Pixel_Art_Perfil_no_frame.png" alt="" transition:name="profile_img"></a>
                     </div>
                 </div>
                 <div class="column"><h2>Front-End Developer</h2></div>
             </div>
+            <!-- <div class="logout_btn">
+                <div class="column">
+                    <Button text='Back' href='/'></Button>
+                </div>
+            </div> -->
         </section>
     </main>
     <div class="stars">
@@ -61,9 +67,12 @@ import { ViewTransitions } from 'astro:transitions';
     }
 	.img{
 		border-radius: 25%;
+        cursor: pointer;
 	}
 	.img img{
+        border: 2px solid var(--border);
 		border-radius: 50%;
+		max-width: 200px;
 	}
     .sections{
         /* display: flex;
@@ -128,7 +137,13 @@ import { ViewTransitions } from 'astro:transitions';
         flex-wrap: nowrap;
         justify-content: space-evenly;
         align-items: center;
-        gap: 5px;
+    }
+    .logout_btn {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
     }
     .column {
         background-color: rgba(0, 0, 0, 0.0);
@@ -136,6 +151,9 @@ import { ViewTransitions } from 'astro:transitions';
         display: grid;
         align-items: center;
         justify-content: space-around;
+    }
+    .col_img{
+        max-width: 200px;
     }
     @media only screen and (max-width: 900px) {
         .circle {
