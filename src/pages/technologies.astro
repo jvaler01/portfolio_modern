@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import { ViewTransitions } from 'astro:transitions';
+import StarsBackground from '../components/StarsBackground.astro';
+---
+<ViewTransitions />
+<Layout title="Home Page" >
+    <section class="abilities">
+        <h1>Tecnologías</h1>
+        <div class="wrapper">
+            <div class="item">
+                <div class="left_content">
+                    <Button text='Back' href='/home'></Button>
+                    <Button text='Back' href='/home'></Button>
+                    <Button text='Back' href='/home'></Button>
+                    <Button text='Back' href='/home'></Button>
+                </div>
+            </div>
+            <div class="item img_item">
+                <div class="right_content">
+                    <Card full_height={false} body={''} title={''}>
+                        
+                    </Card>
+                </div>
+            </div>
+            <div class="item empty_item">
+                <p></p>
+            </div>
+            <div class="item back_item">
+                <div class="back_button">
+                    <Button text='Back' href='/home'></Button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <StarsBackground></StarsBackground>
+</Layout>
+<style>
+  .abilities {
+    color: var(--primary_text);
+    padding: 100px;
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .wrapper {
+    margin-top: 25px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+  }
+  .item {
+    color: #fff;
+    display: grid;
+    place-items: center;
+  }
+</style>
