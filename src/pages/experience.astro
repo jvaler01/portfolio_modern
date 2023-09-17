@@ -11,19 +11,21 @@ import type { experienceDataModel } from '../utils/models/experienceModel';
     <h1>Experience</h1>
     <div class="wrapper">
       <div class="timeline_container" id="timeline_container">
+        
         {
           experienceData.map((experienceItem: experienceDataModel, index) => {
             if(index % 2 === 0) {
               return (
                 <div class="item">
+                  <h3 class="hidden_date">{experienceItem.date}</h3>
                   <Card full_height={true} body={''} title={experienceItem.company}>
-                    <div slot="custom-body">
+                    <div slot="custom-body" class="card_custom_content">
                       <h3>{experienceItem.position}</h3>
                       {
                         experienceItem.content.map((contentItem) => {
                           return (
                             <ul>
-                              <li><span class="content_project">{contentItem.project}:</span> {contentItem.content}</li>
+                              <li><span class="content_project">{contentItem.project}: </span>{contentItem.content}</li>
                             </ul>
                           )
                         })
@@ -31,24 +33,25 @@ import type { experienceDataModel } from '../utils/models/experienceModel';
                     </div>
                   </Card>
                 </div>
-                <div class="item item_start">
-                  {experienceItem.date}
+                <div class="item item_start item_date">
+                  <h3>{experienceItem.date}</h3>
                 </div>
               )
             }else{
               return (
-                <div class="item">
-                  {experienceItem.date}
+                <div class="item item_date">
+                  <h3>{experienceItem.date}</h3>
                 </div>
                 <div class="item item_start">
+                  <h3 class="hidden_date">{experienceItem.date}</h3>
                   <Card full_height={false} body={''} title={experienceItem.company}>
-                    <div slot="custom-body">
+                    <div slot="custom-body" class="card_custom_content">
                       <h3>{experienceItem.position}</h3>
                       {
                         experienceItem.content.map((contentItem) => {
                           return (
                             <ul>
-                              <li><span class="content_project">{contentItem.project}:</span> {contentItem.content}</li>
+                              <li><span class="content_project">{contentItem.project}: </span>{contentItem.content}</li>
                             </ul>
                           )
                         })
@@ -61,7 +64,9 @@ import type { experienceDataModel } from '../utils/models/experienceModel';
           })
         }
       </div>
-      <Button text='Back' href='/home'></Button>
+      <div class="back_button">
+        <Button text='Back' href='/home'></Button>
+      </div>
     </div>
   </section>
 
@@ -123,6 +128,7 @@ import type { experienceDataModel } from '../utils/models/experienceModel';
   #timeline_container {
     position: relative;
     padding: 2em 0;
+    padding-bottom: 100px;
     margin-top: 2em;
     margin-bottom: 2em;
   }
@@ -136,10 +142,54 @@ import type { experienceDataModel } from '../utils/models/experienceModel';
     width: 4px;
     background: var(--border);
   }
+  .hidden_date {
+    margin-bottom: 15px;
+    display: none;
+  }
   .content_project {
     font-weight: bold;
   }
-
+  .card_custom_content h3{
+    margin-bottom: 13px;
+  }
+  .card_custom_content ul{
+    padding: 15px;
+  }
+  .card_custom_content span{
+    color: var(--title_text);
+  }
+  .back_button {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+  }
+  @media only screen and (max-width: 900px) {
+    .timeline_container {
+      grid-template-columns: 1fr;
+    }
+    #timeline_container::before {
+      left: 0;
+    }
+    .item {
+      margin-left: 25px;
+    }
+    .item::before {
+      left: 0;
+      transform: translateX(-42%);
+    }
+    .hidden_date {
+      margin-bottom: 15px;
+      display: block;
+    }
+    .item_date {
+      display: none;
+    }
+    .back_button {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+    }
+  }
 .stars > * {
     position: fixed;
     top: 0;
