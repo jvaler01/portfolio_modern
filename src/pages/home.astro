@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import { ViewTransitions } from 'astro:transitions';
+import StarsBackground from '../components/StarsBackground.astro';
 ---
 <ViewTransitions />
 <Layout title="Home Page" >
@@ -43,16 +44,7 @@ import { ViewTransitions } from 'astro:transitions';
             </div> -->
         </section>
     </main>
-    <div class="stars">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <StarsBackground></StarsBackground>
 </Layout>
 <style>
     .container {
@@ -179,72 +171,6 @@ import { ViewTransitions } from 'astro:transitions';
         .circle {
             width: 750px;
             height: 750px;
-        }
-    }
-    .stars > * {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-        background-size: 200px 200px;
-        background-image: radial-gradient(
-        3px 3px at 40px 60px,
-        #ccc,
-        rgba(0, 0, 0, 0)
-        ),
-        radial-gradient(2px 2px at 20px 50px, #ddd, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 30px 100px, #eee, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 40px 60px, #fff, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 110px 90px, #ccc, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 190px 150px, #ddd, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 90px 123px, #ddd, rgba(0, 0, 0, 0)),
-        radial-gradient(2px 2px at 25px 200px, #ddd, rgba(0, 0, 0, 0));
-        background-repeat: repeat;
-        transform-origin: 50% 50%;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        animation-name: rotateAnimation;
-    }
-
-    .stars > *:nth-child(1) {
-        animation-duration: 30s;
-    }
-
-    .stars > *:nth-child(2) {
-        animation-duration: 32s;
-    }
-
-    .stars > *:nth-child(3) {
-        animation-duration: 35s;
-    }
-
-    .stars > *:nth-child(4) {
-        animation-duration: 41s;
-    }
-
-    .stars > *:nth-child(5) {
-        animation-duration: 44s;
-    }
-
-    .stars > *:nth-child(6) {
-        animation-duration: 49s;
-    }
-
-    .stars > *:nth-child(7) {
-        animation-duration: 52s;
-    }
-
-    .stars > *:nth-child(8) {
-        animation-duration: 56s;
-    }
-    @keyframes rotateAnimation {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
         }
     }
 </style>
