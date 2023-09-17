@@ -12,10 +12,13 @@ const { title, body, footer, full_height } = Astro.props;
 <div class={`card simple ${full_height ? 'full_height' : ''}`}>
     <div class="content">
       <h2>{title}</h2>
-      <p>{body}</p>
+			{
+				body !== '' &&  <p>{body}</p>
+			}
+			<slot name="custom-body"/>
     </div>
     <div class="footer">
-      <slot />
+      <slot name="footer"/>
     </div>
   </div>
 <style>
@@ -25,7 +28,7 @@ const { title, body, footer, full_height } = Astro.props;
 		min-height: 150px;
 		border: 2px solid var(--border);
 		padding: 2rem 1rem;
-		margin: 1rem;
+		/* margin: 1rem; */
 		color: var(--text);
 		background-color: var(--background);
 	}

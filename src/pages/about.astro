@@ -13,7 +13,7 @@ import { aboutData } from '../utils/data/aboutData';
             <div class="item about_content">
                 <div class="left_content">
                     <Card full_height={false} body={aboutData.text} title={aboutData.title}>
-                        <div class="card_footer">
+                        <div class="card_footer" slot="footer">
                             <Button text='CV' href='/documents/cv.pdf' download='JorgeValeroCV'></Button>
                         </div>
                     </Card>
