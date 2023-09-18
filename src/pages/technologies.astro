@@ -11,26 +11,66 @@ import StarsBackground from '../components/StarsBackground.astro';
         <h1>Tecnologías</h1>
         <div class="wrapper">
             <div class="item">
-                <div class="left_content">
-                    <Button text='Back' href='/home'></Button>
-                    <Button text='Back' href='/home'></Button>
-                    <Button text='Back' href='/home'></Button>
-                    <Button text='Back' href='/home'></Button>
+                <div class="">
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="/images/logos/languages_light.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h3>
+                                    _adamdipinto
+                                </h3>
+                                <p>This is where I network and build my professional protfolio.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="item img_item">
-                <div class="right_content">
-                    <Card full_height={false} body={''} title={''}>
-                        
-                    </Card>
+            <div class="item">
+                <div class="">
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="/images/logos/framework_light.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h3>
+                                    _adamdipinto
+                                </h3>
+                                <p>This is where I network and build my professional protfolio.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="item empty_item">
-                <p></p>
-            </div>
-            <div class="item back_item">
-                <div class="back_button">
-                    <Button text='Back' href='/home'></Button>
+            <div class="item">
+                <div class="">
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="/images/logos/tools_light.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h3>
+                                    _adamdipinto
+                                </h3>
+                                <p>This is where I network and build my professional protfolio.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,13 +89,106 @@ import StarsBackground from '../components/StarsBackground.astro';
   .wrapper {
     margin-top: 25px;
     height: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 50px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 25px;
   }
   .item {
     color: #fff;
     display: grid;
     place-items: center;
   }
+ .card {
+    position: relative;
+    border-radius: 10px;
+}
+.card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    transition: 0.7s;
+    z-index: 1;
+}
+.card .icon img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+    max-width: 125px;
+}
+.card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.card .face.face1 {
+    position: relative;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.card:hover .face.face1{
+    background: var(--background);
+    transform: translateY(0px);
+}
+
+.card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.card .face.face1 .content i{
+    max-width: 100px;
+}
+
+.card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-100px);
+}
+
+.card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+
+.card .face.face2 .content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+}
 </style>
