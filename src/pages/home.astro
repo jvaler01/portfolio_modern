@@ -42,6 +42,9 @@ import StarsBackground from '../components/StarsBackground.astro';
                     <Button text='Back' href='/'></Button>
                 </div>
             </div> -->
+            <div class="back_button">
+                <Button text='Back' href='/'></Button>
+            </div>
         </section>
     </main>
     <StarsBackground></StarsBackground>
@@ -146,6 +149,13 @@ import StarsBackground from '../components/StarsBackground.astro';
     }
     .col_img{
         max-width: 200px;
+    }
+    .back_button {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 15px;
+        z-index: 2;
     }
     @media only screen and (max-width: 900px) {
         .circle {
