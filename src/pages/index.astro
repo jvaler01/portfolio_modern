@@ -9,17 +9,17 @@ import StarsInBackground from '../components/StarsInBackground.astro';
 ---
 
 <ViewTransitions />
-<Layout title="Astro portfolio">
+<Layout title="Jorge Valero portfolio">
 	<main>
 		<div class="container_home">
 			<div class="img">
 				<!-- <img src="https://placehold.co/200" alt="" transition:name="profile_img"> -->
 				<img src="/images/profile/Pixel_Art_Perfil_no_frame.png" alt="" transition:name="profile_img">
 			</div>
-			<div class="button_home" id="home">
+			<div class="button_home" id="home" transition:name="back_button">
 				<Button text='Start'></Button>
 			</div>
-			<div class="loader_home none" id="containerLoader">
+			<div class="loader_home none" id="containerLoader" transition:name="back_button">
 				<Loader id='indexLoader' show={false}></Loader>
 			</div>
 			<a href="/home" id="test" style="display: none;"> test </a>

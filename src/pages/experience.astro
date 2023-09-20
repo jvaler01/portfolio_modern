@@ -7,7 +7,7 @@ import type { experienceDataModel } from '../utils/models/experienceModel';
 import StarsBackground from '../components/StarsBackground.astro';
 ---
 
-<Layout title="Home Page" >
+<Layout title="Experience Page" >
   <section class="experience">
     <h1>Experiencia</h1>
     <div class="wrapper">
@@ -65,7 +65,7 @@ import StarsBackground from '../components/StarsBackground.astro';
           })
         }
       </div>
-      <div class="back_button">
+      <div class="back_button" transition:name="back_button">
         <Button text='Back' href='/home'></Button>
       </div>
     </div>

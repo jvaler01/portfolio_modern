@@ -1,0 +1,101 @@
+
+<div class="card">
+  <div class="face face1">
+      <div class="content">
+          <div class="icon">
+            <slot name="img"/>
+          </div>
+      </div>
+  </div>
+  <div class="face face2">
+      <div class="content">
+        <slot name="content"/>
+      </div>
+  </div>
+</div>
+<style>
+  .card {
+    position: relative;
+    border-radius: 10px;
+  }
+  .card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    transition: 0.7s;
+    z-index: 1;
+  }
+  .card .icon img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+    max-width: 125px;
+  }
+  .card .face {
+    width: 350px;
+    height: 200px;
+    transition: 0.5s;
+  }
+
+  .card .face.face1 {
+    position: relative;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+    border: 2px solid var(--border);
+  }
+
+  .card:hover .face.face1{
+    background: var(--background);
+    transform: translateY(0px);
+    border-bottom: 0px
+  }
+
+  .card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .card:hover .face.face1 .content {
+    opacity: 1;
+  }
+
+  .card .face.face1 .content i{
+    max-width: 100px;
+  }
+
+  .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    /* box-shadow: 0 20px 50px rgba(0,0,0,0.8); */
+    transform: translateY(-100px);
+    overflow: hidden;
+  }
+
+  .card:hover .face.face2{
+    transform: translateY(0);
+    height: 350px;
+  }
+
+  .card .face.face2 .content {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+  }
+</style>

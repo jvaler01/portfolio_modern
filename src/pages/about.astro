@@ -7,7 +7,7 @@ import { aboutData } from '../utils/data/aboutData';
 import StarsBackground from '../components/StarsBackground.astro';
 ---
 <ViewTransitions />
-<Layout title="Home Page" >
+<Layout title="About Page" >
     <section class="about">
         <h1>Sobre mí</h1>
         <div class="wrapper">
@@ -27,14 +27,9 @@ import StarsBackground from '../components/StarsBackground.astro';
                     </div>
                 </div>
             </div>
-            <div class="item empty_item">
-                <p></p>
-            </div>
-            <div class="item back_item">
-                <div class="back_button">
-                    <Button text='Back' href='/home'></Button>
-                </div>
-            </div>
+        </div>
+        <div class="back_button" transition:name="back_button">
+            <Button text='Back' href='/home'></Button>
         </div>
     </section>
     <StarsBackground></StarsBackground>
@@ -65,12 +60,6 @@ import StarsBackground from '../components/StarsBackground.astro';
     }
     .img_item {
         order: 2;
-    }
-    .empty_item {
-        order: 3;
-    }
-    .back_item {
-        order: 4;
     }
     .last {
         grid-column-start: 1;
@@ -110,9 +99,9 @@ import StarsBackground from '../components/StarsBackground.astro';
         justify-content: space-around;
     }
     .back_button {
-        width: 100%;
-        display: grid;
-        justify-content: space-around;
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
     }
 	@media only screen and (max-width: 900px) {
         .wrapper {
@@ -128,6 +117,11 @@ import StarsBackground from '../components/StarsBackground.astro';
         }
         .img img{
             max-width: 200px;
+        }
+        .back_button {
+        position: fixed;
+        right: 15px;
+        top: 15px;
         }
 	}
 </style>

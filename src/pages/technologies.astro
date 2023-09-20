@@ -1,168 +1,150 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
 import { ViewTransitions } from 'astro:transitions';
 import StarsBackground from '../components/StarsBackground.astro';
+import AnimatedCard from '../components/AnimatedCard.astro';
 ---
 <ViewTransitions />
-<Layout title="Home Page" >
-    <section class="abilities">
+<Layout title="Technologies Page" >
+    <section class="technologies">
         <h1>Tecnologías</h1>
         <div class="wrapper">
             <div class="item">
                 <div class="">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <div class="icon">
-                                    <img src="/images/logos/languages_light.png" alt="" transition:name="profile_img">
-                                </div>
-                            </div>
+                    <AnimatedCard>
+                        <div slot="img" class="animated_card_img">
+                            <img src="/images/logos/languages_light.png" alt="">
                         </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>
-                                    Lenguajes y maquetación
-                                </h3>
-                                <ul>
-                                    <li>
-                                        HTML5
-                                    </li>
-                                    <li>
-                                        CSS3
-                                    </li>
-                                    <li>
-                                        JavaScript
-                                    </li>
-                                    <li>
-                                        TypeScript
-                                    </li>
-                                    <li>
-                                        Java
-                                    </li>
-                                    <li>
-                                        Go
-                                    </li>
-                                    <li>
-                                        PHP
-                                    </li>
-                                    <li>
-                                        Dart
-                                    </li>
-                                    <li>
-                                        Python
-                                    </li>
-                                    <li>
-                                        Bash
-                                    </li>
-                                    <li>
-                                        SQL
-                                    </li>
-                                </ul>
-                            </div>
+                        <div slot="content" class="animated_card_content">
+                            <h3>
+                                Lenguajes y maquetación
+                            </h3>
+                            <ul>
+                                <li>
+                                    HTML5
+                                </li>
+                                <li>
+                                    CSS3
+                                </li>
+                                <li>
+                                    JavaScript
+                                </li>
+                                <li>
+                                    TypeScript
+                                </li>
+                                <li>
+                                    Java
+                                </li>
+                                <li>
+                                    Go
+                                </li>
+                                <li>
+                                    PHP
+                                </li>
+                                <li>
+                                    Dart
+                                </li>
+                                <li>
+                                    Python
+                                </li>
+                                <li>
+                                    Bash
+                                </li>
+                                <li>
+                                    SQL
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    </AnimatedCard>
                 </div>
             </div>
             <div class="item">
                 <div class="">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <div class="icon">
-                                    <img src="/images/logos/framework_light.png" alt="">
-                                </div>
-                            </div>
+                    <AnimatedCard>
+                        <div slot="img" class="animated_card_img">
+                            <img src="/images/logos/framework_light.png" alt="">
                         </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>
-                                    Frameworks y bases de datos
-                                </h3>
-                                <ul>
-                                    <li>
-                                        Angular 2 - 16
-                                    </li>
-                                    <li>
-                                        Vue
-                                    </li>
-                                    <li>
-                                        Astro
-                                    </li>
-                                    <li>
-                                        React
-                                    </li>
-                                    <li>
-                                        GinGonic
-                                    </li>
-                                    <li>
-                                        Springboot
-                                    </li>
-                                    <li>
-                                        PostgreSQL
-                                    </li>
-                                    <li>
-                                        MongoDB
-                                    </li>
-                                </ul>
-                            </div>
+                        <div slot="content" class="animated_card_content">
+                            <h3>
+                                Frameworks y bases de datos
+                            </h3>
+                            <ul>
+                                <li>
+                                    Angular
+                                </li>
+                                <li>
+                                    Vue
+                                </li>
+                                <li>
+                                    Astro
+                                </li>
+                                <li>
+                                    React
+                                </li>
+                                <li>
+                                    GinGonic
+                                </li>
+                                <li>
+                                    Springboot
+                                </li>
+                                <li>
+                                    PostgreSQL
+                                </li>
+                                <li>
+                                    MongoDB
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    </AnimatedCard>
                 </div>
             </div>
             <div class="item">
                 <div class="">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <div class="icon">
-                                    <img src="/images/logos/tools_light.png" alt="">
-                                </div>
-                            </div>
+                    <AnimatedCard>
+                        <div slot="img" class="animated_card_img">
+                            <img src="/images/logos/tools_light.png" alt="">
                         </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>
-                                    Herramientas
-                                </h3>
-                                <ul>
-                                    <li>
-                                        Docker
-                                    </li>
-                                    <li>
-                                        Git
-                                    </li>
-                                    <li>
-                                        Jira
-                                    </li>
-                                    <li>
-                                        Trello
-                                    </li>
-                                    <li>
-                                        Confluence
-                                    </li>
-                                    <li>
-                                        Google docs
-                                    </li>
-                                    <li>
-                                        Apache
-                                    </li>
-                                </ul>
-                            </div>
+                        <div slot="content" class="animated_card_content">
+                            <h3>
+                                Herramientas
+                            </h3>
+                            <ul>
+                                <li>
+                                    Docker
+                                </li>
+                                <li>
+                                    Git
+                                </li>
+                                <li>
+                                    Jira
+                                </li>
+                                <li>
+                                    Trello
+                                </li>
+                                <li>
+                                    Confluence
+                                </li>
+                                <li>
+                                    Google docs
+                                </li>
+                                <li>
+                                    Apache
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    </AnimatedCard>
                 </div>
             </div>
         </div>
-        <div class="back_button">
+        <div class="back_button" transition:name="back_button">
           <Button text='Back' href='/home'></Button>
         </div>
     </section>
     <StarsBackground></StarsBackground>
 </Layout>
 <style>
-  .abilities {
+  .technologies {
     color: var(--primary_text);
     padding: 100px;
     height: 100%;
@@ -186,21 +168,7 @@ import StarsBackground from '../components/StarsBackground.astro';
     display: grid;
     place-items: center;
   }
- .card {
-    position: relative;
-    border-radius: 10px;
-}
-.card .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--background);
-    transition: 0.7s;
-    z-index: 1;
-}
-.card .icon img {
+  .animated_card_img img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -209,90 +177,32 @@ import StarsBackground from '../components/StarsBackground.astro';
     transition: 0.7s;
     color: #fff;
     max-width: 125px;
-}
-.card .face {
-    width: 350px;
-    height: 200px;
-    transition: 0.5s;
-}
-
-.card .face.face1 {
-    position: relative;
-    background: var(--background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    transform: translateY(100px);
-    border: 2px solid var(--border);
-}
-
-.card:hover .face.face1{
-    background: var(--background);
-    transform: translateY(0px);
-    border-bottom: 0px
-}
-
-.card .face.face1 .content {
-    opacity: 1;
-    transition: 0.5s;
-}
-
-.card:hover .face.face1 .content {
-    opacity: 1;
-}
-
-.card .face.face1 .content i{
-    max-width: 100px;
-}
-
-.card .face.face2 {
-    position: relative;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    /* box-shadow: 0 20px 50px rgba(0,0,0,0.8); */
-    transform: translateY(-100px);
-    overflow: hidden;
-}
-
-.card:hover .face.face2{
-    transform: translateY(0);
-    height: 350px;
-}
-
-.card .face.face2 .content {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #414141;
-}
-
-.card .face.face2 .content h3 {
+  }
+  .animated_card_content h3 {
     margin: 0 0 10px 0;
     padding: 0;
     color: #fff;
     font-size: 24px;
     text-align: center;
     color: #414141;
-}
-.card .face.face2 .content ul {
-    list-style:none; 
-}
-.back_button {
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    z-index: 2;
-}
-@media only screen and (max-width: 900px) {
-    .back_button {
-        position: fixed;
-        right: 15px;
-        top: 15px;
+  }
+  .animated_card_content ul {
+     list-style:none;
+     -webkit-user-select: none; /* Safari */
+     -ms-user-select: none; /* IE 10 and IE 11 */
+     user-select: none; /* Standard syntax */
+   }
+   .back_button {
+     position: fixed;
+     right: 15px;
+     bottom: 15px;
+     z-index: 2;
+   }
+    @media only screen and (max-width: 900px) {
+        .back_button {
+            position: fixed;
+            right: 15px;
+            top: 15px;
+        }
     }
-}
 </style>
