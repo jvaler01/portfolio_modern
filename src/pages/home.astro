@@ -24,8 +24,11 @@ import StarsBackground from '../components/StarsBackground.astro';
                 </a>
             </div>
             <div class="sections projects">
-                <a href="/">
+                <!-- <a href="/">
                     Proyectos
+                </a> -->
+                <a href="/" transition:name="back_button">
+                    Salir
                 </a>
             </div>
             <div class="circle">
@@ -37,9 +40,9 @@ import StarsBackground from '../components/StarsBackground.astro';
                 </div>
                 <div class="column"><h2>Front-End Developer</h2></div>
             </div>
-            <div class="back_button" transition:name="back_button">
-                <Button text='Back' href='/'></Button>
-            </div>
+            <!-- <div class="back_button" transition:name="back_button">
+                <Button text='Salir' href='/'></Button>
+            </div> -->
         </section>
     </main>
     <StarsBackground></StarsBackground>

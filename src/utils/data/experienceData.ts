@@ -52,7 +52,7 @@ export const experienceData: experienceDataModel[] = [
 	},
 	{
 		company: 'Quasar Science Resources',
-		position: 'Ingeniero de Sistemas',
+		position: 'Ingeniero de Software',
 		date: 'Julio 2019 – Enero 2022',
 		content: [
 			{
