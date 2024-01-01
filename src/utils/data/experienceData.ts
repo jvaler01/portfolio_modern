@@ -2,9 +2,20 @@ import type { experienceDataModel } from './../models/experienceModel';
 
 export const experienceData: experienceDataModel[] = [
 	{
+		company: 'GPTadvisor',
+		position: 'Desarrollador Front-End Angular',
+		date: 'Noviembre 2023 – Actualidad',
+		content: [
+			{
+				project: 'GTPadvisor',
+				content: 'Desarrolo general de la aplicación utilizando Angular versión 16, PrimeNG versión 16, librerías de multi-idioma y scss para el manejo de estilos.'
+			}
+		]
+	},
+	{
 		company: 'Oubita',
 		position: 'Jefe de departamento de Front-End y Scrum Master',
-		date: 'Diciembre 2022 – Actualidad',
+		date: 'Diciembre 2022 – Octubre 2023',
 		content: [
 			{
 				project: 'Plataforma de Exchange',
