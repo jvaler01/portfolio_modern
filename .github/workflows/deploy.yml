@@ -1,16 +1,16 @@
 name: Deploy to GitHub Pages workflow
 
 on:
-  repository_dispatch:
-    types: [trigger-workflow]
+  push:
+    branches:
+      - main  # o el nombre de la rama que prefieras
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run github pages workflow
-        uses: actions/checkout@v3
+      - name: Dispatch event
+        uses: peter-evans/repository-dispatch@v2
         with:
           repository: jvaler01/jvaler01.github.io
-          ref: main # Nombre de la rama del repositorio
-          workflow_dispatch: deploy.yml # Nombre del flujo de trabajo a ejecutar
+          event-type: trigger-workflow
