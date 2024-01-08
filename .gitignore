@@ -21,6 +21,6 @@ pnpm-debug.log*
 .DS_Store
 
 # images
-public/images/*
-public/fonts/*
-public/documents/*
+# public/images/*
+# public/fonts/*
+# public/documents/*
