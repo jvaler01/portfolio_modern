@@ -12,5 +12,6 @@ jobs:
       - name: Dispatch event
         uses: peter-evans/repository-dispatch@v2
         with:
+          token: ${{ secrets.PAGES_REPO }}
           repository: jvaler01/jvaler01.github.io
           event-type: trigger-workflow
