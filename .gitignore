@@ -24,3 +24,6 @@ pnpm-debug.log*
 # public/images/*
 # public/fonts/*
 # public/documents/*
+
+# jetbrains setting folder
+.idea/
