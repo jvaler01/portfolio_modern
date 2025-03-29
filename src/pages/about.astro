@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import { aboutData } from '../utils/data/aboutData';
 import StarsBackground from '../components/StarsBackground.astro';
 import Box from '../components/Box.astro';
 ---
-<ViewTransitions />
+<ClientRouter />
 <Layout title="Jorge Valero portfolio | About" >
     <section class="about">
         <h1>Sobre mí</h1>
